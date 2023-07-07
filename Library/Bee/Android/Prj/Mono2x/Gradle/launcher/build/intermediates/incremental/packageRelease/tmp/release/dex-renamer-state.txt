@@ -1,0 +1,4 @@
+#Sat Jun 24 10:32:06 BRT 2023
+base.0=C\:\\Users\\wwwjo\\Linguaventura Mobile\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
