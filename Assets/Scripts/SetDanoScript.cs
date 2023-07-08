@@ -29,6 +29,15 @@ public class SetDanoScript : MonoBehaviour
     }
     void SalvarDano()
     {
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "dano" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "dano" + Path.AltDirectorySeparatorChar;
+        }
+
         try
         {
             if (!System.IO.Directory.Exists(path))
@@ -50,7 +59,16 @@ public class SetDanoScript : MonoBehaviour
 
     void LoadDano()
     {
-        if(!File.Exists(path + "dano.json"))
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "dano" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "dano" + Path.AltDirectorySeparatorChar;
+        }
+        
+        if (!File.Exists(Path.Combine(path, "dano.json")))
         {
             CreateDano();
         }
@@ -60,7 +78,7 @@ public class SetDanoScript : MonoBehaviour
             string data;
             if (Application.isMobilePlatform)
             {
-                path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "dano" + Path.AltDirectorySeparatorChar;
+                //path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "dano" + Path.AltDirectorySeparatorChar;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);

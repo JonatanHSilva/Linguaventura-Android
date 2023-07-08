@@ -68,6 +68,15 @@ public class SenhaProf : MonoBehaviour
 
     public bool SetSenha()
     {
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
+        }
+
         try
         {
             if (!System.IO.Directory.Exists(path))
@@ -91,8 +100,16 @@ public class SenhaProf : MonoBehaviour
 
     public bool LoadSenha()
     {
-        path = Application.streamingAssetsPath + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
-        if (!File.Exists(path + "senha.json"))
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
+        }
+        
+        if (!File.Exists(Path.Combine(path, "senha.json")))
         {
             SenhaPadrao();
         }
@@ -102,7 +119,7 @@ public class SenhaProf : MonoBehaviour
             string data;
             if (Application.isMobilePlatform)
             {
-                path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
+                //path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "senha" + Path.AltDirectorySeparatorChar;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
@@ -144,19 +161,7 @@ public class SenhaProf : MonoBehaviour
         s = senha[0];
         if (Input.GetButtonDown("Submit") || click == true)
         {
-            if (password.text == s.senha)
-            {
-                areaProf.SetActive(false);
-                senhaCorreta.SetActive(true);
-                password.text = "";
-                Erase();
-            }
-            else
-            {
-                password.text = "";
-                mensagem.text = "Senha Incorreta. Tente Novamente.";
-                Invoke("Erase", 5);
-            }
+            Senha();
             click = false;
         }
     }
@@ -209,6 +214,7 @@ public class SenhaProf : MonoBehaviour
     {
         s = new("1234");
         senha.Add(s);
+        SetSenha();
     }
     void clicked()
     {
@@ -218,5 +224,22 @@ public class SenhaProf : MonoBehaviour
     void Erase()
     {
         mensagem.text = "";
+    }
+
+    void Senha()
+    {
+        if (password.text == s.senha)
+        {
+            areaProf.SetActive(false);
+            senhaCorreta.SetActive(true);
+            password.text = "";
+            Erase();
+        }
+        else
+        {
+            password.text = "";
+            mensagem.text = "Senha Incorreta. Tente Novamente.";
+            Invoke("Erase", 5);
+        }
     }
 }

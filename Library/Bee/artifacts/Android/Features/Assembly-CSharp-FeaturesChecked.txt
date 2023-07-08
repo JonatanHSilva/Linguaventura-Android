@@ -1,5 +1,2 @@
-UnityEngine.Networking
-UnityEngine.Network
-UnityEngine.Networking.UnityWebRequest
 UnityEngine.Input::GetTouch
 UnityEngine.Input::get_touchCount

@@ -51,9 +51,6 @@ extern "C" void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_Tilemap();
 	RegisterModule_Tilemap();
 
-	void RegisterModule_TLS();
-	RegisterModule_TLS();
-
 	void RegisterModule_UI();
 	RegisterModule_UI();
 
@@ -62,9 +59,6 @@ extern "C" void RegisterStaticallyLinkedModulesGranular()
 
 	void RegisterModule_UIElements();
 	RegisterModule_UIElements();
-
-	void RegisterModule_UnityWebRequest();
-	RegisterModule_UnityWebRequest();
 
 }
 

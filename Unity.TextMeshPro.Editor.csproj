@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BB9BFEAE-FA8D-55A3-9F5E-5E32027599C4}</ProjectGuid>
+    <ProjectGuid>{FFE5C439-3468-C551-E7D9-4E68A7460071}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.TextMeshPro.Editor</AssemblyName>
@@ -366,6 +366,9 @@
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\PlaybackEngines\LinuxStandaloneSupport\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -781,23 +784,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{7B67EA18-7472-C1A7-44C6-A1C3C66C2B79}</Project>
+      <Project>{82741D34-AF50-E427-1044-79358FECA4D2}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{9A379A7B-5F47-7B1A-01D2-A83263E47DD1}</Project>
+      <Project>{E0255388-84FE-06AF-BD1B-303719ECA71A}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{2A8B6B2A-B597-7B1C-5539-0BCC47E848B5}</Project>
+      <Project>{11ABFE8C-0DEA-89CE-00E8-80D4C0E70E92}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{6C9D9AD4-CA12-5D83-7568-36E96C31D66E}</Project>
+      <Project>{1D5190F3-9463-33FC-55CF-3BD696183F38}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{1248F535-F555-FF82-4AB1-FBEB3ED4CFB6}</Project>
+      <Project>{833169CF-E6FF-7517-F4F0-5383EE950483}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

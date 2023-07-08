@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{78030D3A-9504-C45D-5EAD-0E26E7DA65FF}</ProjectGuid>
+    <ProjectGuid>{D45C8258-BAE4-114F-74FE-16ABF63402A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.SpriteShape.Editor</AssemblyName>
@@ -338,6 +338,9 @@
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\PlaybackEngines\LinuxStandaloneSupport\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -753,39 +756,39 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
-      <Project>{0C493FB0-B8A4-E550-8107-376752D2C433}</Project>
+      <Project>{A6C54D15-7805-EAA0-469C-762E6086D7C0}</Project>
       <Name>Unity.InternalAPIEditorBridge.001</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Editor.csproj">
-      <Project>{FAA4AC2A-7D9C-3522-FAFE-C52315A06330}</Project>
+      <Project>{DB849A4C-6A73-EC60-4723-E4291BD1AAD6}</Project>
       <Name>Unity.2D.Common.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
-      <Project>{526EB9F2-3242-D951-202A-23FE4F98F07A}</Project>
+      <Project>{D1C03103-A2BC-232C-2C4A-9FA4BF2FD62B}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
-      <Project>{4237B4BD-4FE4-36B1-DF4E-61E328D91911}</Project>
+      <Project>{AAF0DFAA-D3E3-803B-66C6-B15F1E898970}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Path.Editor.csproj">
-      <Project>{89EAB114-76AE-F745-3B3F-D32A378191BA}</Project>
+      <Project>{4DC0C6E6-4BF2-15A3-B70F-87BDE1F1999E}</Project>
       <Name>Unity.2D.Path.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{9A379A7B-5F47-7B1A-01D2-A83263E47DD1}</Project>
+      <Project>{E0255388-84FE-06AF-BD1B-303719ECA71A}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{2A8B6B2A-B597-7B1C-5539-0BCC47E848B5}</Project>
+      <Project>{11ABFE8C-0DEA-89CE-00E8-80D4C0E70E92}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{6C9D9AD4-CA12-5D83-7568-36E96C31D66E}</Project>
+      <Project>{1D5190F3-9463-33FC-55CF-3BD696183F38}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{1248F535-F555-FF82-4AB1-FBEB3ED4CFB6}</Project>
+      <Project>{833169CF-E6FF-7517-F4F0-5383EE950483}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

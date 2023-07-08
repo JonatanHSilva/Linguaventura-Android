@@ -39,15 +39,20 @@ public class SetFaseScript : MonoBehaviour
 
     public bool SetFase()
     {
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
+        }
+
         try
         {
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
-            }
-            else
-            {
-                CreateFase();
             }
             SerializableList<Fase> auxiliar = new SerializableList<Fase>();
             auxiliar.Lista = fase;
@@ -66,8 +71,16 @@ public class SetFaseScript : MonoBehaviour
 
     public bool LoadFase()
     {
-        path = Application.dataPath + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
-        if (!File.Exists(path + "fase.json"))
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
+        }
+        
+        if (!File.Exists(Path.Combine(path, "fase.json")))
         {
             CreateFase();
             Debug.Log("Criado");
@@ -79,7 +92,7 @@ public class SetFaseScript : MonoBehaviour
             string data;
             if (Application.isMobilePlatform)
             {
-                path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
+                //path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "fase" + Path.AltDirectorySeparatorChar;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);

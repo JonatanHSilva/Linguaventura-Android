@@ -102,6 +102,15 @@ public class QuisScript : MonoBehaviour
     }
     public bool SalvarPerguntas()
     {
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
+        }
+
         try
         {
             if (!Directory.Exists(path))
@@ -124,8 +133,16 @@ public class QuisScript : MonoBehaviour
     }
     public bool LoadPerguntas()
     {
-        path = Application.dataPath + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
-        if (!File.Exists(path + fileName + ".json"))
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
+        }
+        
+        if (!File.Exists(Path.Combine(path, fileName + ".json")))
         {
             SalvarPerguntas();
         }
@@ -135,7 +152,7 @@ public class QuisScript : MonoBehaviour
             string data;
             if (Application.isMobilePlatform)
             {
-                path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
+                //path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "data" + Path.AltDirectorySeparatorChar;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
@@ -175,7 +192,7 @@ public class QuisScript : MonoBehaviour
     {
         try
         {
-            if (!System.IO.Directory.Exists(path+"Respostas"+ Path.AltDirectorySeparatorChar))
+            if (!System.IO.Directory.Exists(path+ "Respostas"+ Path.AltDirectorySeparatorChar))
             {
                 System.IO.Directory.CreateDirectory(path + "Respostas" + Path.AltDirectorySeparatorChar);
             }

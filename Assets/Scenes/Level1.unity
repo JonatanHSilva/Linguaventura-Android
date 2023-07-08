@@ -1581,6 +1581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518794663}
   - component: {fileID: 518794665}
+  - component: {fileID: 518794666}
   m_Layer: 0
   m_Name: SCENE
   m_TagString: Untagged
@@ -1619,6 +1620,23 @@ MonoBehaviour:
   dano: []
   d:
     dano: 0
+  path: 
+--- !u!114 &518794666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518794662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446766fefa2fadc44a25e389cf294492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baus: []
+  bau:
+    indice: 0
+    aberto: 0
   path: 
 --- !u!1 &524569095
 GameObject:
@@ -2315,7 +2333,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -70, y: -70}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &657754780
 MonoBehaviour:

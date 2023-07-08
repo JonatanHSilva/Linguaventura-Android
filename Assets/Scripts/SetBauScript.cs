@@ -26,7 +26,7 @@ public class SetBauScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        path = Application.streamingAssetsPath + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
+        
     }
 
     // Update is called once per frame
@@ -36,6 +36,15 @@ public class SetBauScript : MonoBehaviour
     }
     void SaveBau()
     {
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
+        }
+
         try
         {
             if (!Directory.Exists(path))
@@ -57,8 +66,16 @@ public class SetBauScript : MonoBehaviour
 
     void LoadBau()
     {
-        path = Application.streamingAssetsPath + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
-        if (!File.Exists(path + "bau.json"))
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
+        }
+        
+        if (!File.Exists(Path.Combine(path, "bau.json")))
         {
             ResetBau();
         }
@@ -68,7 +85,7 @@ public class SetBauScript : MonoBehaviour
             string data;
             if (Application.isMobilePlatform)
             {
-                path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
+                //path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "bau" + Path.AltDirectorySeparatorChar;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);

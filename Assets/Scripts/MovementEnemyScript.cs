@@ -79,7 +79,7 @@ public class MovementEnemyScript : MonoBehaviour
         {
             if ((float)vida == (float)vidaMaxima * 0.9)
             {
-                AumentaDano(20);
+                AumentaDano(80);
                 vez++;
             }
         }

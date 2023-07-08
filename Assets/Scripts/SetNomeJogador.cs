@@ -46,6 +46,15 @@ public class SetNomeJogador : MonoBehaviour
 
     public void SetNome()
     {
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
+        }
+
         try
         {
             if (!System.IO.Directory.Exists(path))
@@ -67,8 +76,16 @@ public class SetNomeJogador : MonoBehaviour
 
     public void LoadNome()
     {
-        path = Application.dataPath + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
-        if (!File.Exists(path + "nomejogador.json"))
+        if (Application.isMobilePlatform)
+        {
+            path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "StreamingAssets" + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
+        }
+        else
+        {
+            path = Application.dataPath + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
+        }
+        
+        if (!File.Exists(Path.Combine(path, "nomejogador.json")))
         {
             CreateNome();
         }
@@ -78,7 +95,7 @@ public class SetNomeJogador : MonoBehaviour
             string data;
             if (Application.isMobilePlatform)
             {
-                path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
+                //path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "nome" + Path.AltDirectorySeparatorChar;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
